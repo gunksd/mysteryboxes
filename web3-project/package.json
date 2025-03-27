@@ -40,7 +40,6 @@
     "@rainbow-me/rainbowkit": "1.0.0",
     "@tanstack/react-query": "latest",
     "@wagmi/connectors": "latest",
-    "@wagmi/core": "latest",
     "@web3modal/wagmi": "latest",
     "autoprefixer": "^10.4.20",
     "browserify-zlib": "^0.2.0",
