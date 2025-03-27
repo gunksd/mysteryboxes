@@ -218,8 +218,9 @@ export function useBlindboxContract() {
     }
 
     try {
+      // 修改这里，确保mintPrice是bigint类型
       writeMintBlindbox({
-        value: mintPrice,
+        value: BigInt(mintPrice.toString()),
       })
 
       toast({
