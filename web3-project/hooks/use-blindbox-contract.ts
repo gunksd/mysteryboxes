@@ -449,9 +449,11 @@ export function useBlindboxContract() {
     isConnected,
     address,
     ethBalance: ethBalance?.formatted || "0",
-    mintPrice: mintPrice ? formatEther(mintPrice) : "0.01",
+    // 修改这里，确保mintPrice在传递给formatEther之前是bigint类型
+    mintPrice: mintPrice ? formatEther(BigInt(mintPrice.toString())) : "0.01",
     nftBalance: nftBalance ? Number(nftBalance) : 0,
-    tokenBalance: tokenBalance ? formatEther(tokenBalance) : "0",
+    // 同样需要检查tokenBalance是否需要转换
+    tokenBalance: tokenBalance ? formatEther(BigInt(tokenBalance.toString())) : "0",
     stakedNFTCount: stakedNFTCount ? Number(stakedNFTCount) : 0,
     userNFTs,
     stakedNFTs,
